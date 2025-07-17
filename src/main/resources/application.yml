@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: api_project
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  cloud:
+    aws:
+      credentials:
+        access-key: ${AWS_ACCESS_KEY:}
+        secret-key: ${AWS_SECRET_KEY:}
+      region:
+        static: ${AWS_REGION:us-east-1}
+
+# Custom application properties
+aws:
+  s3:
+    bucket: ${AWS_S3_BUCKET:journal-analysis-bucket}
+
+server:
+  port: 8080
