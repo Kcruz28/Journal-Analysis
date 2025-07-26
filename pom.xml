@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-		<aws.sdk.version>2.25.16</aws.sdk.version>
+		<aws.sdk.version>2.25.39</aws.sdk.version>
 		<spring-cloud-aws.version>3.1.1</spring-cloud-aws.version>
 	</properties>
 	<dependencyManagement>
@@ -62,21 +62,26 @@
 		</dependency>
 
 		<!-- AWS SDK S3 (if you're using S3 for the bucket) -->
+		<!-- AWS SDK v2 for S3 and core -->
 		<dependency>
 			<groupId>software.amazon.awssdk</groupId>
 			<artifactId>s3</artifactId>
+			<version>${aws.sdk.version}</version>
 		</dependency>
-
-		<!-- AWS SDK Core -->
 		<dependency>
 			<groupId>software.amazon.awssdk</groupId>
-			<artifactId>aws-core</artifactId>
+			<artifactId>auth</artifactId>
+			<version>${aws.sdk.version}</version>
 		</dependency>
-
-		<!-- AWS SDK Common utilities -->
 		<dependency>
 			<groupId>software.amazon.awssdk</groupId>
-			<artifactId>sdk-core</artifactId>
+			<artifactId>regions</artifactId>
+			<version>${aws.sdk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>comprehend</artifactId>
+			<version>${aws.sdk.version}</version>
 		</dependency>
 
 		<dependency>
